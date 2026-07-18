@@ -1,34 +1,82 @@
-# Gradle files
-.gradle/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Local configuration file (sdk path, etc)
-local.properties
+# PyInstaller
+*.manifest
+*.spec
 
-# Log/OS Files
-*.log
+# Virtual environments
+venv/
+ENV/
+env/
 
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.aab
-*.apk
-output-metadata.json
-
-# IntelliJ
-*.iml
+# IDE
+.vscode/
 .idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+*.swp
+*.swo
+*~
 
-# Keystore files
-*.jks
-*.keystore
+# Environment variables
+.env
+.env.local
+.env.*.local
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
+# Logs
+*.log
+logs/
 
-# Android Profiling
-*.hprof
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploads
+uploads/
+
+# Temporary files
+*.tmp
+/tmp/
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Frontend build
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/extensions.json
