@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: kpgm-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - kpgm-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: kpgm-postgres
+    environment:
+      POSTGRES_DB: kpgm
+      POSTGRES_USER: kpgm
+      POSTGRES_PASSWORD: kpgm_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - kpgm-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: kpgm-backend
+    environment:
+      FLASK_ENV: production
+      DATABASE_URL: postgresql://kpgm:kpgm_password@postgres:5432/kpgm
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+      - postgres
+    volumes:
+      - ./backend:/app/backend
+      - uploads:/app/uploads
+    networks:
+      - kpgm-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: kpgm-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - kpgm-network
+
+volumes:
+  postgres_data:
+  uploads:
+
+networks:
+  kpgm-network:
+    driver: bridge
