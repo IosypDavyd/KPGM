@@ -1,104 +1,114 @@
-# 🟢 KPGM - Key Power Grail Mystery
+# 🎵 KPGM KEYPOWERGRAILMYSTERY MUSIC VIDEO GENERATOR
 
-**Solana Memtoken** | Built on **Raydium.io** | Community-Driven Web3 Project
+**Універсальне приложение для генерації музики і відео**
 
----
+## 🚀 Особливості
 
-## 💎 About KPGM
+- ✨ **SUNO AI Integration** - Генерація музики за текстовим описом
+- 🎬 **Video Generation** - Автоматична генерація відео для музики
+- 🎨 **AI Visual Effects** - Синтез видео за допомогою Runway/Stability AI
+- 🔄 **Audio-Video Sync** - Синхронізація аудіо та відео
+- 🌐 **Web UI** - Інтуїтивний веб-інтерфейс
+- 📡 **REST API** - Повнофункціональний API
+- 🎯 **Batch Processing** - Масова обробка проектів
+- 💾 **Project Management** - Збереження і управління проектами
 
-KPGM (Key Power Grail Mystery) is a community-driven memtoken built on the Solana blockchain. We're creating a strong ecosystem focused on transparency, engagement, and sustainable growth in the Web3 space.
+## 📋 Вимоги
 
-- 🔗 **Network**: Solana (SOL)
-- 🏗️ **Platform**: Raydium.io
-- 👥 **Community**: Active across multiple platforms
-- 🚀 **Mission**: Building the future of Web3 with a strong community
-- ✨ **Status**: Active & Growing
+- Python 3.9+
+- Node.js 16+
+- SUNO API Key
+- Runway ML API Key (для відео)
+- FFmpeg
 
----
+## 🔧 Встановлення
 
-## 📍 Token Details
+```bash
+# Клонування репозиторію
+git clone https://github.com/IosypDavyd/KPGM.git
+cd KPGM
+git checkout music-video-generator
 
-### Contract Address
+# Встановлення залежностей
+pip install -r requirements.txt
+npm install
+
+# Конфігурація
+cp .env.example .env
+# Додайте API ключі в .env
 ```
-EBRBXt79AyC2TVDLQAoBB6L7fgsctqS7DTevkwPuhray
+
+## 🎯 Використання
+
+### Web UI
+```bash
+python app.py
+# Перейдіть на http://localhost:5000
 ```
 
-### Quick Links
-- 🦜 **Raydium.io**: [Trade on Raydium](https://raydium.io)
-- 📊 **CoinMarketCap**: [@User_hzov86453813](https://coinmarketcap.com)
-- 📈 **Gecko Terminal**: [@User_hzov86453813](https://geckoterminal.com)
+### CLI
+```bash
+python cli.py --text "описание музики" --style "жанр" --duration 60
+```
 
----
+### API
+```bash
+curl -X POST http://localhost:5000/api/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "text": "описание музики",
+    "style": "ambient",
+    "duration": 60,
+    "video": true
+  }'
+```
 
-## 🔗 Connect With Community
+## 📁 Структура проекту
 
-### Official Channels
-- 🐦 **X/Twitter**: [@KpgmSol](https://x.com/KpgmSol)
-- 📱 **Telegram**: [KPGM_SOL](https://t.me/KPGM_SOL)
-- 💬 **Telegram Community**: [Join Group](https://t.me/+q9VhY8ypidxiNjRk)
-- 💬 **Discord**: [Join Server](https://discord.gg/2VWXC2az)
-- 📺 **YouTube**: [@iosypdavyd_books](https://youtube.com/@iosypdavyd_books?si=2S6J8KFf6U_iLOD8)
+```
+KPGM/
+├── backend/
+│   ├── app.py
+│   ├── config.py
+│   ├── requirements.txt
+│   ├── api/
+│   ├── services/
+│   │   ├── suno_service.py
+│   │   ├── video_service.py
+│   │   └── synthesis_service.py
+│   ├── models/
+│   └── utils/
+├── frontend/
+│   ├── package.json
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── assets/
+│   └── public/
+├── ffmpeg_scripts/
+├── docs/
+└── tests/
+```
 
-### Creator
-- 👤 **GitHub**: [IosypDavyd](https://github.com/IosypDavyd)
-- 💼 **LinkedIn**: [Iosyp Davyd](https://www.linkedin.com/in/iosyp-davyd-01bbb82b4)
+## 🔐 Безпека
 
----
+- Всі API ключі зберігаються в `.env`
+- Аутентифікація через JWT
+- CORS конфігурація
+- Rate limiting
 
-## 🎯 Project Goals
+## 📚 Документація
 
-- ✅ Build a transparent and engaged community
-- ✅ Foster sustainable tokenomics
-- ✅ Create value through Web3 innovation
-- ✅ Support decentralized finance initiatives
-- ✅ Expand across multiple platforms
+Детальна документація знаходиться в папці `docs/`
 
----
+## 🤝 Контрибьютинг
 
-## 🛠️ Tokenomics
+Вітаємо PR та Issues!
 
-- **Blockchain**: Solana (SOL)
-- **Standard**: SPL Token
-- **Distributed via**: Raydium.io
-- **Community Focused**: Yes
-- **Transparent**: Yes
+## 📄 Ліцензія
 
----
+MIT License
 
-## 📊 Analytics
+## 🌟 Автор
 
-Track KPGM performance:
-- 📈 **CoinMarketCap**: Monitor price, market cap, volume
-- 📊 **Gecko Terminal**: Real-time charts and analytics
-- 🔍 **Solscan**: View on-chain transactions
-
----
-
-## 🤝 How to Get Involved
-
-1. **Join Community**: Connect on Telegram, Discord, or Twitter
-2. **Trade on Raydium**: Swap SOL for KPGM
-3. **Follow Updates**: Stay tuned to our social channels
-4. **Contribute**: Share ideas and help grow the community
-
----
-
-## ⚠️ Disclaimer
-
-This is a community-driven memtoken project. Please conduct your own research before investing. Always verify contract addresses and be cautious of scams.
-
----
-
-## 📫 Support & Contact
-
-Need help? Reach out through:
-- 💬 Telegram: [KPGM_SOL](https://t.me/KPGM_SOL)
-- 🐦 Twitter: [@KpgmSol](https://x.com/KpgmSol)
-- 💬 Discord: [Join Our Server](https://discord.gg/2VWXC2az)
-
----
-
-**"KPGM: Building Web3 Together"** 🚀✨
-
-**Creator**: [IosypDavyd](https://github.com/IosypDavyd)  
-**Last Updated**: May 2026
+**IosypDavyd** - KPGM Community
